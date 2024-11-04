@@ -1,0 +1,58 @@
+jQuery(document).ready(listo);                        ----------->  el document es la palabra general que representa "toda nuestra web" y ready es la accion que le brindamos al "document" para que realice las tareas siguientes. Es decir: ("vamos a trabjar con elementos listos que estan en una web lista para sus actividades")
+
+
+function listo()                                                               --------------> bloque de codigo que "hace algo y que se pude reutilizar las veces que yo quiera." a fuction le doy un nombre, en este caso es "listo"
+{
+	jQuery(".hamb").click(function(e){                         --------------> "hamb" es el elemento y "click" es la funcion.   "e" o cualquier letra que le ponga representa la accion en si en una variable.
+      
+         e.preventDefault();                                               ---------------------->anula la funcion predeterminada si aprieto la hamburguesita, es decir, ahora se queda en el mismo lugar, no hace nada. Su accion normal de un HREF en este caso de "hamb" es que al hacer click me diriga hacia donde yo le dije en html, pero con esta funcion anulamos eso.
+
+
+          jQuery("header .container nav").toggleClass("open");                       --------> selecciono el "header.container.nav" y le agregamos una clase ,de ser asi va a ser modificada . "open" es la clase. Haciendo esto hay que modificarlo tambien desde el css movile agregandole esto: header .container nav.open { transform: translateX(0); } siendo el header.container nav.open con el traslate el 100%. .... El toggleclass agrega o quita la clase, si tiene el open la va a quitar, si no lo tiene la va a agregar (en el movile).
+EN RESUMEN: haciendo esto cuando nosotros hacemos click en la hamburguesita estando en un celular nos va a abrir solamente el menu del nav, es de cir, "inicio,nosotros,servicios,galeria,contacto"    LUEGO DE TODO ESTO, fuimos al css y le agregamos una position relativa, de esta manera esta funcion se va a realizar tambien en la pc y no solo en los celulares.
+
+ 
+          jQuery(".hamb i").toggleClass("fa-xmark");                            -----------> seleccionando el ".hamb i" le doy la clase de abre y cierro con toggleclass, poniendole de elemento el "faxmark" que es un icono de X sacado del fontawesome. De esta manera al abrir el menu, cuando lo quiera cerrar va a aparecer la X para el menu closed.
+ 
+
+
+
+	});
+
+
+
+             jQuery("header .container nav a").click(function(){                     ----------->  en mis palabras: a todos los "a" que estan dentro del "nav" que esta dentro de un DIV de clase "container" que esta dentro del "header" le damos la funcion de que cuando hagamos click vaya al href(#) de referencia que le corresponde, galeria con galeria, inicio con inicio, contacto con contacto, etc.
+
+                              
+                    var dev = jQuery(this).attr("href");               -------------------> var de VARIABLE y dev el NOMBRE de esa variable. "this" (a ese) hace referencia al elemento que le estoy haciendo click. .attr es el VALOR del atributo que vendria a ser el HREF en html.
+
+
+
+                      jQuery("html,body").animate({                             -------------> Le aviso a jquery que vamos a trabajar con html y bodi. "Animate" es una animacion. 
+         	            "scrollTop": jQuery(dev).offset().top - 84.02                  ------------->scrolltop: es una propiedad que sirve para que cuando nosotros le hacemos click al elemento "contacto o galeria etc" vaya redireccionado a esa seccion. Para poder lograr eso tengo que seleccionar el nombre de la variable (ID) anterior, que es DEV.  Offset determina el valor desde el punto de arriba del explorador hasta el punto dodne esta servicios o contacto cual es su valor, desde el top0 osea arriba hasta el fin de ese lugar. 
+En base al offset, cambiamos la variable que teniamos en *TOOGLECLASS de la hamb* por REMOVECLASS, por eso ahora cuando visualicemos en el editor va a aparecer REMOVECLASS, pero previo a esto estaba togleclass. top es el nombre de la variable offset. y el 84.02 es el ALTO del HEADER en mobile, entonces se lo resto y de esa manera el menu me sigue a la hora de apretar alguna seccion.
+
+
+
+                })
+
+
+}
+
+
+
+
+
+/////////////////////////////////
+EJEMPLO:
+
+jQuery(document).ready(listo); 
+
+function listo() 
+{
+	alert("hola mundo");    
+}                                                                   -----------> "function" es la funcion, "listo" es el nombre de la funcion que vamos a utilizar y ponerla en el primer comando puesto al lado de "ready". y "alert" es una clase de comando en este caso es la ventana de alerta que aparece en la pagina con el cartel de hola mundo.
+/////////////////////////////////
+
+
+

@@ -1,0 +1,715 @@
+* {
+    box-sizing: border-box;       ----------------> trabaja como caja, no se agranda y respeta los bordes-anchos. No crece cuando le damos espacios internos (paddings)
+}
+
+
+
+
+body 
+{
+   font-family: "roboto";          --------------> señalamos la tipografia de letra de googlefonts para todo el cuerpo(body) de la pag.
+    font-size: 13px;          ------------> todos los elementos dentro del body van a tener este tamaño de base.
+   color: black;
+
+}
+
+
+
+a
+
+ {
+                                                  display: es para cambiarle el comportamiento a un elemento. Puede ser en bloque (block), En     linea (inline) , (Inline-block) este hace que los elementos se coloquen 1                                                                                                       al lado del otro pero respetando el alto que yo le coloque a ese elemento. Y (flex).
+
+                                                  display: inline-block;     ----------------> inline hace que los elementos esten uno al lado del otro y con este atributo hago que todos los ENLACES(a) tengan un alto. Es decir, respetan el alto del contenido interno.
+
+                                                text-decoration: none;
+                      
+
+ }
+
+
+
+p
+
+ {
+    color: black;           -------------------------> le da color negro a "p"
+ }
+
+
+
+
+header
+
+ {
+    padding: 15px 0;         --------------------> define el espacio entre el relleno y el borde del elemento, es como un margen interno (define el espacio hacia adentro del elemento) .en este caso, 15px arriba y abajo y 0 para los costados.
+
+    position: fixed;        -------------------> posicion fija: para que el elemento este fijo en HTML y "te siga" al scrollear para abajo.                      ATTENCION: en mobile lo cambie desde inspeccion con posicion ABSOLUTA, para que cuando haga click en inicio o contacto alguno de esos el header NO me persiga.
+   top: 0;              ---------------------> para que el menu este siempre arriba.
+   left: 0;            -----------------------> para que este pegado a la izq.
+   z-index: 2;            --------------------> para que el header se coloque "encima" de toda la seccion INICIO.
+   background-color: white;
+   width: 100%;          ---------------------> siempre darle 100% ancho.
+
+ }
+
+
+
+header .container  
+                        
+ {                                            
+                                            
+
+	display: flex;     ----------------------> aprovecha el espacio del elemento(container) para acomodar sus elementos hijos (a y nav)
+	justify-content: space-between;      ----------> hace que los elementos se acomoden dentro del espacio que les corresponde, ya sean 2,3 o mas elementos. se acomodan en el mismo espacio. En base al eje x.
+        align-items: center;     ---------------------> alinea los itemns de manera centrada en el contenedor.  En base al eje y.
+
+ }
+
+
+
+
+header .container .logo
+
+ {
+	width: 150px;     -------------------> ancho del logo que esta DEBTRO del contenedor que esta DENTRO del header.
+ }
+
+
+
+header .container nav a   
+ {
+	color: red;     ------------------------> a  todos los a(enlaces)que esten en el contenedor tendran color rojo.       
+        text-decoration: none;       ------------> para quitarle el subrayado. Y en caso de agregarlo es UNDERLINE.
+        margin: 0 15px;             ---------------->   margen 0 arriba y abajo, margen 15px a los costados.              RECORDAR: el MARGEN es un espacio EXTERNO(hacia afuera) al elemento, no interno.  
+ 
+ }
+
+
+
+
+
+                        header .container .hamb                       -------------> icono utilizado en mediaqueri.
+   {
+   	display: none;                                       -----------------------> Es para que el icono no aparezca pero si en los dispisitivos celulares, en el mediaqueri esta en block. 
+
+               position: relative;                ----------------> este elemento lo agregue cuadno estabamos haciendo las funciones en js, es para qque el menu de la hamburguesita se abra y se cierre a la hora de hacerle click
+
+   }
+
+
+
+
+
+footer
+{
+    background-color: black;
+    color: white;                                           
+    padding-top: 60px;
+}
+
+
+
+
+
+footer .barra-footer
+{
+	background-color: grey;
+	text-align: center;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+footer .logo-footer
+{
+	width: 100%;                             ----------------------> para el logo de "cocacola"
+}
+
+
+
+
+
+footer ul
+{
+	padding-left: 0;
+	list-style: none;
+                     margin: 0;                              ---------------> margen 0 para los iconos de abajo.
+} 
+
+
+
+
+footer ul li
+{
+	margin-bottom: 10px;
+}
+
+
+
+
+footer p
+{
+	color: white;
+	margin-bottom: 30px;                 ---------------> para la descripcion debajo del logo cocacola.
+}
+
+
+
+
+footer a
+{
+	color: white;
+
+}
+
+
+
+footer .redes                                                                   ----------------> Aca editamos los iconos. 
+{
+	font-size: 25px;                                            
+	display: flex;                                             -----------------> Para que los iconos esten uno al lado del otro. 
+	
+}
+
+
+
+footer .redes a
+{
+	margin: 0 6px;                -------------------> 0 para el margen de arriba contra el "redes sociales" y 6 para el margen entre ellos.
+}
+
+
+
+.boton 
+{
+	text-align: center;
+	text-decoration: none;
+	padding: 15px 30px;
+                     border: none;                                          -----------> le quita a todos los botones el borde.
+}
+
+
+
+
+.boton.boton-rojo 
+{
+	color: white;
+	background-color: red;
+	font-size: 20px;
+	font-weight: bold;           -------------> profundidad.
+}
+
+
+
+
+.boton.boton-blanco 
+{
+	color: red;
+	background-color: white;
+	font-size: 16px;                                            ------------> caracteristicas del boton "ver mas"
+	font-weight: bold;
+	border: 1px solid red;
+}
+
+
+
+.boton.boton-negro 
+{
+	color: white;
+	background-color: black;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+
+
+.boton.boton-negro:hover
+{
+	color: black;
+	background-color: white;                ---------------------> hover: para pasarle el cursor por encima y que haga efecto. 
+	
+}
+
+
+
+.seccion                  
+{
+     padding-top: 60px;      
+     padding-bottom: 60px;   
+}
+
+.cuadrado-perfecto                       -------------------> a raiz de crear cuadrado perfecto nos daremos cuenta uqe las imagenes de "galeria" se ordenaron todas en forma de cuadraditos.
+{"
+	width: 100%;
+	padding-bottom: 100%;           ---------------> caracteristicas de los 3 cuadrados. el padding bottom es el alto total de los cuadrados.
+                     position: relative;  
+}
+
+
+
+
+.cuadrado-perfecto img                                  
+{
+	width: 100%;                                       --------------> con el width y height logramos expandir la imagen tanto en el alto como en el hancho del cuadrado. Lo podemos hacer porque el elemento padre "cuadrado-perfecto" tiene un alto total con el padding. 
+	height: 100%;
+	object-fit: cover;                                 --------------> propiedad que solo funciona en etiquetas img y video. Es para que cubra(cover) todo el espacio que tenga con la imagen.
+	object-position: center;              -------------------> con este centras toda la imagen.
+	position: absolute;                     ---------------> Para que este encima del padding-bottom. Y si el elemento es absoluto, el elemento padre (cuadrado-perfecto) tambien tiene que tener posicion absoluta o relativa.
+	top: 0;
+	left: 0;
+}
+
+
+
+.container
+
+ {
+        width: 1140px;       ---------------------> ancho del contenedor y de todos los elementos dentro.
+        margin: 0 auto 0 auto;      ------------------> margen en 0 para top(arriba) y AUTO para right(derecha). margen 0 para bottom(abajo) y AUTO para left (izq)
+        padding-right: 15px;
+        padding-left: 15px;
+        position: relative;                     --------------> para que el formulario este encima de la imagen(mapa)
+
+}
+
+
+
+.container-fuid
+{              
+            width: 100%;
+             padding-right: 15px;             ------------------>paddings para margenes a los costados.
+             padding-left: 15px;
+             position: relative;             -------------------> para que el formulario este encima de la imagen (mapa)
+}
+
+
+
+.row
+{
+	display: flex;       
+	flex-wrap: wrap;       -----------> si una de las columnas no llega a entrar por su ancho dentro de la clase "row" lo que hace es irse hacia abajo y no queda amontonada.
+                     	margin-left: -15px;               
+	margin-right: -15px;              ---------------------> margenes en negativos, porque el padding del contenedor y el padding de la columna tienen un padding 15. 
+}
+
+
+
+.columna
+{
+	padding-right: 15px;
+	padding-left: 15px;           
+}
+
+
+
+
+
+.columna-25
+{
+	width: 25%;                     ------------------> esta columna esta relacionada con el "FOOTER"
+}
+
+
+
+
+
+
+.columna-33
+{
+	width: 33.33%;                 -------------> porque 33.33? porque quiero abarcar las 3 columnas, y si yo divido 100%3 es ese el resultado y si yo quiero usar todo el espacio y que cada columna tenga un 33% para que no sobre ni falte.
+
+}
+
+
+
+
+.columna-41
+{
+	width: 41.66%;
+}
+
+.columna-50
+{
+	width: 50%;
+}
+
+.empujar-50
+{
+	margin-left: 50%;                          ------------------> no entendi lo de empujar ni columnas .
+}
+
+.empujar-58
+{
+	margin-left: 58.33%;
+}
+
+.empujar-66
+{
+	margin-left: 66.66%;
+}
+
+.empujar-0
+{
+	margin-left: 0;
+}
+
+
+#inicio
+
+ {
+         position: relative;       --------------> posicion relativa: el elemento se queda en su lugar pero se puede mover con 5 propiedades:top,bottom,left,right y z-index. Es decir, el "espacio" del elemento permanece en el lugar pero el bloque se puede mover. El elemento se puede mover pero el espacio queda en el lugar. En cambio por ejemplo con la posicion absoluta, moves el bloque con las 5 propiedades pero el espacio deja de existir.
+
+ }
+
+
+
+#inicio img 
+ {
+         width: 100%;
+         display: block;        ----------------> IMG al ser elemento de tipo "INLINE" tiene espacios a los costados, entonces como yo no quiero que quede espacios y quiero que abarque el total de la pantalla le pongo el display tipo "BLOCK".
+
+}
+
+
+
+#inicio .bloque-inicio
+{
+	position: absolute;    ----------------> posicion absoluta: El elemento puede moverse con las 5 propiedades de movimiento antes dichas, pero el espacio deja de existir, no ocupa mas un lugar. Para que la posicion absoluta funcione tiene que estar dentro de un elemento padre con posicion relativa o absoluta tambien, en este caso #inicio que tiene posicion relativa.
+        
+                     top: 40%;           -----------------> lo centramos desde arriba hacia la mitad.
+	left: 50%;          -----------------> espacio derecho.
+	width: 400px;       -----------------> ancho en pixeles. 
+	text-align: center;  ----------------> centra los textos dentro del bloque y tambien los elementos "a" por ser etiquetas de tipo inline.
+	margin-left: -200px;      ------------> Al tener 400 px de ancho, EN MARGIN podemos trabajar con margenes negativos, entonces le "restamos" la mitad de su totalidad para que regrese y quede bien centrado. el margin puede trabajar con pixeles, porcentajes y negativos. 
+
+
+
+}
+
+
+
+#inicio .bloque-inicio h1
+{
+	color: white;
+	font-size: 34px;
+}
+
+#inicio .bloque-inicio p 
+{
+	color: black;
+	font-size: 16px;
+}
+
+#nosotros
+{
+	background-image: url(img/latas.jpg);        ---------> imagen de fondo.
+	background-size:  cover;                           ---------------> aprovecha el tamaño del fondo y la imagen trata de cubrir todo el espacio que tenga, en otras palabras le da profundidad a la foto.
+	
+}
+
+
+#nosotros p
+{
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	margin: 0;
+}
+
+
+#servicios .bloque-servicio
+{
+	border: 2px solid grey;                            -----------> borde: tamaño, tipo y color. 
+}
+
+
+#servicios .bloque-servicio .bloque-img-servicio
+{
+
+}
+
+
+#servicios .bloque-servicio .bloque-img-servicio img
+{
+	width: 100%;                                       ----------------->  al "img" que esta dentro del elemento clase "bloque img-servicio"; que esta dentro del elemento ".bloque-servicios" que esta dentro de ""nosotros" le damos un ancho del 100% para que la imagen entre entera en el contenedor chiquito.
+}
+
+
+#servicios .bloque-servicio .bloque-img-servicio.cuadrado-perfecto
+{
+                 padding-bottom: 56.25%;                          -----------------------------> este elemento es para que tenga mas forma de rectangulo. De esta manera puedo poner la imagen que quiera, y ponerle el tamaño que quiera.
+}
+
+
+
+#servicios .bloque-servicio .bloque-contenido-servicio 
+{
+	padding: 15px;                 ------------> al colocarle un solo valor, en todos los lados va a tenr esa cantidad de pixeles en padding, entonces los textos quedan como centrados.
+}
+
+
+
+#galeria
+{
+
+}
+
+#galeria h4
+{
+	padding-right: 15px;               ----------------> paddings a los lados.
+	padding-right: 15px;
+	text-align: center;                    
+	position: absolute;                       -------------->para que el h4 de palabra "imagen" no ocupe un espacio y este sobre la imagen.  Para ser absoluto el elemento "padre" tiene que ser igual o relativo, y el padre es "cuadrado perfecto" con posicion relativa.
+	top: 40%;
+	color: white;
+	font-size: 18px;
+	width: 100%;                              -------------->  para que abarque todo el ancho y se centre.
+}
+
+
+
+
+
+#galeria img
+{
+	filter: grayscale(1);           ---------------------> para que las imagenes se vean en blanco y negro. con el grayscale 1 lo activamos.
+}
+
+
+
+#galeria .cuadrado-perfecto:hover img
+{
+	filter: grayscale(0);                ---------------------> hover: hace que al pasar el cursor por el cuadrado se ponga en color la imagen, con el grayscale desactivamos esa accion de blanco y negro al pasar cursor.
+}
+
+
+
+#galeria .cuadrado-perfecto:hover h4
+{
+	display: none;                 --------------------->con el display cambiamos el comportamiento del elemento, de esta manera al ponerle none y el hover ser del h4 pasamos el cursor y desaparece el texto tambien.
+}
+
+
+
+
+
+#contacto 
+{
+	position: relative;                   -------------------> (mapa)
+}
+
+
+
+
+
+#contacto iframe
+{
+	position: absolute;               --------------> el iframe que esta dentro del elemento #contacto quiero que este dentro y no que ocupe un espacio, sino que este de fondo, por eso la posicion absoluta. 
+	top: 0;          
+	left: 0;                                        --------------> para que este pegado arriba a la izquierda.
+	width: 100%;     
+	height: 100%;                            ----------> el % de que le da el alto? en este caso, del formulario. 
+	filter: grayscale(1);                    ------------> blanco y negro.
+}
+
+
+
+
+#contacto form
+{
+	padding: 60px;                      
+	background-color: red;                     ---------> estilos del formulario.
+}
+
+#contacto form .form-block                                                                                                                                 { en html: placeholder= es para que este la palabrita en gris dentro del formulario, como "mensaje" "nombre" "email" }
+{
+	width: 100%;
+	margin-bottom: 15px;                          ---------> seguimos estilando formulario.
+}
+
+
+
+#contacto form .form-block .form-control
+{
+	display: block;                               ---------------> xq los imput son display inline, y yo quiero que sea en block.
+	height: 40px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	padding: 5 px 10 px;
+
+}
+
+
+#contacto form .form-block .form-control textarea
+{
+	display: block;
+	height: 100px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	padding: 5 px 10 px
+}
+
+
+
+
+
+
+#contacto form .form-block.bloque-ultimo
+{
+	margin-bottom: 0;
+
+
+}
+
+
+
+
+@media(max-width: 767px)                               --------------> 767px : Es el tamaño maximo que puede tener un celular. Todo lo que yo escriba dentro de este mediaqueri va a funcionar solo para los dispositivos que tengan como maximo el ancho de 767. 
+
+{
+              
+
+               body
+         {
+    	font-size:15px ;              Para que todos los textos de la pagina tengan 15 px dentro del mediaquare.
+          }
+
+
+
+              header .container nav 
+         {
+   	position: fixed;                                           -------------> posicion fija. 
+   	width: 100%;
+   	height: 100%;
+   	background-color: white;
+   	padding-top: 80px;
+   	padding-bottom: 80px;
+   	padding-right: 15px;
+   	padding-left: 15px;
+   	top: 0;
+   	left: 0;
+   	display: flex;                                                     ----------------> para que los items dentro del header esten uno encima del otro. Flex tiene 1 propiedad llamada flex direction.
+   	flex-direction: column;                                 ------------------->direction por defecto tiene "row" pero nosotros lo ponemos en column para que esten uno encima del otro.
+   	transition: all 0.4s ease;                             ----------------> cambio de un estado a otro de manera no tan brusca. por ejem: Si al pasar el cursor por un elemnto cambia de un color a otro, ese esel tiempo de transicion. All_: quiere decir uqe cualquier propiedad que se modifique va a ocurrir la transicion. 0.4s segundos, ease es el tipo de transicion. hay varias.
+   	transform: translateX(100%);                        -----------------> traslada el elemento fuera del elemento visible. Es decir, cuando nosotros veamos la pagina desde un dispositivo movil no vamos a ver los items como si se veerian desde una pc. lo que vamos ver es la "hamburguesita/icono" que le agrego dsps.
+
+           }
+
+
+
+
+
+           header .container nav a                                   --------------------> para editar especificamente los enlaces "inicio,nosotros,galeria,servicios,contacto"
+       {
+   	font-size: 30px;                                    
+   	margin: 15px 0;
+         }
+
+
+
+
+             header .container .hamb
+            {
+   	display: block;                               -------------------->  para editar el icono de las 3 lineas (hambur)
+   	font-size: 40px;
+   	color: red;
+
+             }
+
+
+
+
+            form .boton.boton-negro
+            {
+   	width: 100%;                              -------------------> el ancho entero del BOTON.
+              }
+
+
+             footer
+               {
+   	text-align: center;                          ----------> textos centrados en el footer.
+               }
+
+
+                footer .logo-footer
+              {
+   	width: 50%;                             -------------> el logo de cocacola se achica. Y como NO es display block y SI es inline, se centra. 
+               }
+
+
+                   footer .redes 
+                     {
+   	justify-content: center;                         -------------------> en base al eje X se centran los elementos. (iconos de inst, face y tw)
+                     }
+
+
+                .container                                             ---------------> El container del dispositivo tiene que tener si o si 100%. ESTO ES LO PRIMERO QUE HAY QUE PONER EN EL MEDIAQUARE, ahora esta aca porque lo ordene luego.
+	{
+		width: 100%;               
+	}
+
+
+        
+              .columna-mobile-100
+	{
+		width: 100%;
+	}
+                                                                                                    ---------------> Con estas columnas mobile deberian abarcar todo el ancho de la pantalla en el celular, a mi no me aparece aca desde la pc, pero los codigos estan bien puestos tanto en css como html. 
+ 
+                .columna-mobile-50
+                  {
+   	                   width: 50%;
+                    }
+
+
+
+            .empujar-mobile-0
+                {
+   	margin-left: 0;
+                   }
+                                                                                      ---------------> Para que abarque todo el ancho de la pantalla en el dispositivo celular, estas propiedades estan puestas dentro del HTML debajo del IFRAME, en la class columnas
+             .sinpadding-mobile
+                {
+   	padding: 0;
+                }
+
+
+
+                  #inicio                                                
+          {
+   	height: 100vh;                          ------------------> vh: alto del dispositivo. 
+           }
+
+
+                #inicio img                                     --------------------> edicion de la imagen del vaso con la coca de fondo que esta DENTRO de la seccion INICIO.
+          {
+   	height:100%;                            -------------------> porque tenemos un alto fijo que es el vh entonces es el 100%.
+   	object-fit: cover;                      -------------------> para qeu cubra todo.
+   	object-position: center;                ----------------> para centrar.
+           }
+
+
+
+                 #servicios .bloque-servicio
+            {
+	   margin-bottom: 15px;                            ------------> margenes entre los bloques servicios.
+            }
+
+
+                   #contacto 
+             {
+   	padding: 0;                            ------------------> para que no tenga espacio ni arriba ni abajo.
+              }
+
+
+                 #contacto iframe
+            {
+     	position: relative;                                ---------------> en el modo pc esta en absoluto, pero aca le pongo relativa porque quiero queel mapa ocupe un espacio.
+                      height: 50vh;
+               }
+
+ }

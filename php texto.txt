@@ -1,0 +1,30 @@
+<?php
+
+                           	if($_SERVER["REQUEST_METHOD"] == "POST")                     ----------------> if:Expresion condicional que verifica que se cumpla cierta condicion y si es verdader va a poder ejecutar lineas de codigos necesarias. $_SERVER : variable global de php.  Request_method: metodo de envio. == es comparar un valor con otro valor. en este caso compara la variable "server" con "post" que estaba en el method del form-action. Entonces si se cumple esta condicion, yo voy a poder obtener los valores que yo puse dentro de mi formulario en el imput, osea:nombre, email, mensaje. Que se van a enviar al archivo index.php agregado al form-action previamente y poder trabajar con ellos. Para eso creamos la siguiente variable: (sigue abajo)
+                           	{
+
+                                $nombre = $_POST["nombre"]  ;
+                                $nombre = $_POST["email"]  ;                           --------->$nombre: variable + $_POST:variable global de php que este utilizando en el method del form, en este caso post. , y dentro el name puesto en el imput. en estos tres casos, name, email y mensaje. dentro de los corchetes tiene que ser el mismo valor uqe agregue en el campo del name.
+                                $nombre = $_POST["mensaje"]  ;
+
+                               if(isset($nombre))
+                                {
+                                   if(isset($email))                                     ------------>validacion de datos de formulario: isset: verifica si tiene contenido ese campo, en palabras de programacion se fija si esta sitiado. 
+                                  {
+                                      if(isset($mensaje))
+                                      {
+                                      	  $para = "nuevocorreo17@gmail.com";                               ---------->mail del cliente.
+                                      	  $asunto = "Esto es una prueba";                                  --------->texto
+                                      	  $cuerpo = $nombre."\n".$email."\n".$mensaje;                        ----------->creo un msj en base a las variables que tengo: $nombre y el texto dentro del "\n" (se llama encadenar en php mezclar variables.) lo demas es para completar el cuerpo para recibir el correo.
+                                      	  $adicional = "From: noreply@ivanibañez.com"          -------> es para que me aparezca esto a la hora de que me llega el mail ,sino me va a llegar un correo medio raro. 
+
+                                      	  mail($para,$asunto,$cuerpo,$adicional);                   ---------->mail :funcion. esta funcion puede tener datos de entrada, que son las siguientes palabras puestas dsps de mail. es el paso anterior.
+                                      	?>
+                                           <p>envio exitoso</p>
+                                      	<?php
+                                      }
+                                    }
+                                	}
+                               }
+
+                           ?>
